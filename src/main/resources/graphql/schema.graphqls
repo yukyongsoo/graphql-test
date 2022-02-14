@@ -1,0 +1,40 @@
+# GraphQL Schema 정의
+type Query {
+    artifactRepositories : [Artifact]
+    artifact(id : ID!) : Artifact
+    # queryMapping(slug: ID!): Project
+}
+
+type Project {
+    slug: ID
+    name: String
+    repositoryUrl: String
+    status: ProjectStatus
+    releases: [Release]
+}
+
+type Release {
+    version: String!
+    status: ReleaseStatus!
+    current: Boolean
+}
+
+type Artifact {
+    id: ID!
+    name: String!
+    url: String!
+    snapshotsEnabled: Boolean
+}
+
+enum ProjectStatus {
+    ACTIVE
+    COMMUNITY
+    INCUBATING
+    ATTIC
+}
+
+enum ReleaseStatus {
+    GENERAL_AVAILABILITY
+    MILESTONE
+    SNAPSHOT
+}

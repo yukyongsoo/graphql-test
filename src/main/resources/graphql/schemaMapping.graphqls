@@ -1,0 +1,5 @@
+query schemaMapping($slug: ID!) {
+    Project(slug: $slug) {
+        repositoryUrl
+    }
+}

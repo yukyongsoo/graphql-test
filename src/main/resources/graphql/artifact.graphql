@@ -1,0 +1,5 @@
+query artifact($id: ID!) {
+    artifact(id: $id) {
+        name
+    }
+}
