@@ -1,8 +1,7 @@
-# GraphQL Schema 정의
 type Query {
     artifactRepositories : [Artifact]
     artifact(id : ID!) : Artifact
-    # queryMapping(slug: ID!): Project
+    project(slug: ID!): Project
 }
 
 type Project {

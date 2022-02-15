@@ -1,1 +1,9 @@
-
+spring:
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create-drop
+  graphql:
+    schema:
+      printer:
+        enabled: true

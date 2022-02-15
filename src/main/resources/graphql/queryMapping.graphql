@@ -1,5 +1,5 @@
-query queryMapping($slug: ID!) {
-    Project(slug: $slug) {
+query project($slug: ID!) {
+    project(slug: $slug) {
         repositoryUrl
         releases {
             version

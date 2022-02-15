@@ -1,15 +1,15 @@
 package com.yuk.graphql
 
-import org.springframework.data.annotation.Id
-import org.springframework.data.mongodb.core.mapping.Document
 import org.springframework.data.querydsl.QuerydslPredicateExecutor
 import org.springframework.data.repository.CrudRepository
 import org.springframework.graphql.data.GraphQlRepository
+import javax.persistence.Entity
+import javax.persistence.Id
 
 @GraphQlRepository
-interface ArtifactRepositories : CrudRepository<Artifact, String>
+interface ArtifactRepositories : CrudRepository<Artifact, String>, QuerydslPredicateExecutor<Artifact>
 
-@Document
+@Entity
 class Artifact(
     @Id var id: String,
     var name: String,
