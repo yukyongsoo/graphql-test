@@ -3,7 +3,16 @@ spring:
     open-in-view: false
     hibernate:
       ddl-auto: create-drop
+    show-sql: true
   graphql:
     schema:
       printer:
         enabled: true
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb:
+            core:
+              MongoTemplate: DEBUG

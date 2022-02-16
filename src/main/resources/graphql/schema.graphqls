@@ -2,6 +2,8 @@ type Query {
     artifactRepositories : [Artifact]
     artifact(id : ID!) : Artifact
     project(slug: ID!): Project
+    mongoRepo: [Mongo]
+    mongo(id : ID!) : Mongo
 }
 
 type Project {
@@ -23,6 +25,11 @@ type Artifact {
     name: String!
     url: String!
     snapshotsEnabled: Boolean
+}
+
+type Mongo {
+    id: ID!
+    testColumn: String!
 }
 
 enum ProjectStatus {
